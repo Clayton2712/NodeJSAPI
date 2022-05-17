@@ -1,2 +1,2 @@
 # NodeJSAPI
-A practice project
+A demonstration of NodeJS
