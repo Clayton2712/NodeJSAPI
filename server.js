@@ -37,7 +37,7 @@ app.listen(PORT,()=>{
 
 //Create MySQL Database with WAMPServer
 /*
-CREATE TABLE IF NOT EXISTS tutorials (
+CREATE TABLE IF NOT EXISTS nodejsapi (
     id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     title varchar(225) NOT NULL,
     description varchar(255),
