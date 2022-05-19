@@ -43,3 +43,4 @@ CREATE TABLE IF NOT EXISTS tutorials (
     description varchar(255),
     published BOOLEAN DEFAULT false);
 */
+require('./app/modules/db');
