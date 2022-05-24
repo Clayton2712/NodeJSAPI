@@ -45,6 +45,8 @@ app.listen(PORT,()=>{
     console.log(`http://localhost:${PORT}`);
 });
 
+require("./app/routes/tutorialRoutes.js")(app);
+
 //Create MySQL Database with WAMPServer
 /*
 CREATE TABLE IF NOT EXISTS nodejsapi (

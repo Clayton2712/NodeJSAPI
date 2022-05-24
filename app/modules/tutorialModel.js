@@ -23,7 +23,7 @@ Tutorial.getAll = (title, result) => {
             return;
         }
         console.log("tutorials", res);
-        results(null, res);
+        result(null, res);
     });
 };
 module.exports = Tutorial;

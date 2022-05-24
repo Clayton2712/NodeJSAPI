@@ -1,4 +1,4 @@
-const Tutorial = require("../models/tutorialModel.js");
+const Tutorial = require("../modules/tutorialModel.js");
 const {} = require("express");
 
 //Create and save a new Tutorial
