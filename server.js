@@ -20,10 +20,20 @@ app.use(express.json());
 //
 app.use(express.urlencoded({extended: true}));
 
+
+
 //simple route
 app.get('/', (req, res) => {
     res.json({message: 'Welcome to the world of Node JS!'})
 });
+
+// another route
+// app.get('/alt-route', (req, res) => {
+//     res.json({message: 'An alternate route\'s response.'})
+// });
+
+
+
 
 require("./app/routes/tutorialRoutes");
 
