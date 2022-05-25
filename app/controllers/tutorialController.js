@@ -16,7 +16,7 @@ exports.create = (req, res) => {
         published: req.body.published || false
     });
     //Save tutorial in database
-    Tutorial.create(tutorial, (err, date) => {
+    Tutorial.create(tutorial, (err, data) => {
         if(err)
         res.status(500).send({
             message: err.message || "Some error occured while creating the Tutorial."
