@@ -3,7 +3,7 @@ module.exports = app => {
     var router = require("express").Router();
 
     //Create new Tutorial (Sample Data)
-    //router.post("/", tutorials.create);
+    router.post("/", tutorials.create);
 
     //Retrieve all Tutorials (Sample Data)
     router.get("/", tutorials.findAll);
