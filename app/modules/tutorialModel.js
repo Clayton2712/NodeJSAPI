@@ -75,4 +75,21 @@ Tutorial.findById = (id, result) => {
     });
 };
 
+Tutorial.remove = (id, result) => {
+    sql.query("DELETE FROM tutorials WHERE id = ?", id, (err, res) => {
+        if(err) {
+            console.log("error: ", err);
+            result(null, err);
+            return;
+        }
+        if(res.affectedRows == 0) {
+            //no tutorial found with ID
+            result({kind: "not_found"}, null);
+            return;
+        }
+        console.log(`Deleted record with ID: ${id}`);
+        result(null, res);
+    });
+};
+
 module.exports = Tutorial;
