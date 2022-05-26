@@ -39,7 +39,7 @@ exports.findAll = (req, res) => {
 
 //Find single Tutorial with an ID
 exports.findOne = (req, res) => {
-    Tutorial.findById(req.params.id, (arr, data) => {
+    Tutorial.findById(req.params.id, (err, data) => {
         if (err) {
             if (err.kind === "not_found"){
                 res.status(404).send({
