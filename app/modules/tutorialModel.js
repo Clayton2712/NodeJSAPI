@@ -1,3 +1,4 @@
+const { query } = require("express");
 const sql = require("./db.js");
 
 //constructor
@@ -34,4 +35,27 @@ Tutorial.getAll = (title, result) => {
         result(null, res);
     });
 };
+
+Tutorial.updateById = (id, tutorial, result) => {
+    sql.query(
+        "UPDATE tutorials SET title = ?, description = ?, published = ? WHERE id = ?",
+        [tutorial.title, tutorial.description, tutorial.published, id],
+        (err, res) => {
+            if (err) {
+                console.log("error: ", err);
+                result(null, err);
+                return;
+            }
+
+            if (res.affectedRows == 0) {
+                //Not found Tutorial with the ID
+                result({ kind: "not_found"}, null);
+                return;
+            }
+            console.log("Updated tutorial: ", {id: id, ...tutorial});
+            result(null, {id: id, ...tutorial});
+        }
+    );
+};
+
 module.exports = Tutorial;
