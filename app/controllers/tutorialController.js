@@ -80,6 +80,7 @@ exports.update = (req, res) => {
         }
     );
 };
+
 //Delete a tutorial by ID
 exports.delete = (req, res) => {
     Tutorial.remove(req.params.id, (err, data) => {
