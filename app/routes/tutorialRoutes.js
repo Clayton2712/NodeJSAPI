@@ -15,10 +15,10 @@ module.exports = app => {
     router.get("/:id", tutorials.findOne);
 
     //Delete a single tutorial with id
-    router.delete(":id", tutorials.delete);
+    router.delete("/:id", tutorials.delete);
 
     //TODO ON OWN
-    router.get(":id", tutorials.findAllPublished);
+    //router.get(":id", tutorials.findAllPublished);
 
     app.use('/api/tutorials', router);
     
