@@ -80,3 +80,19 @@ exports.update = (req, res) => {
         }
     );
 };
+//Delete a tutorial by ID
+exports.delete = (req, res) => {
+    Tutorial.remove(req.params.id, (err, data) => {
+        if(err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `No tutorial found with ID: ${req.params.id}.` 
+                });
+            } else {
+                res.status(500).send({
+                    message: `Could not delete tutorial with id: ${req.params.id}`
+                });
+            }
+        } else res.send({message: `Tutorial deleted successfully!`});
+    });
+};
